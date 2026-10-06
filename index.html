@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cre8Learn Institute - Loops and Arrays (Multiple Choice)</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#0a0e0a;--ink:#d0e0d0;--g:#2d7a3d;--g2:#4cde7a;--bad:#c0392b}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,serif;line-height:1.6;min-height:100vh;padding-bottom:30px}
+#gate{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:10;padding:20px}
+#gate.hidden{display:none}
+.gbox{border:1px solid var(--g);border-radius:10px;padding:32px;max-width:400px;width:100%;text-align:center;background:#0f140f}
+.gbox h2{color:var(--g2);margin-bottom:8px}
+.gbox p{color:#8aa88d;font-size:14px;margin-bottom:18px}
+.gbox input,.gbox button{width:100%;font:inherit;padding:12px;border-radius:6px;margin-bottom:12px}
+.gbox input{background:#0d1310;border:1px solid #2a3a2a;color:var(--ink);text-align:center;letter-spacing:2px}
+.gbox button{background:transparent;border:1px solid var(--g);color:var(--g2);cursor:pointer}
+.gbox button:hover{background:var(--g2);color:#08110c}
+#err{color:#e57373;font-size:13px;min-height:18px}
+#paper{display:none;max-width:860px;margin:24px auto;background:#f8f5ee;color:#1a1a1a;padding:44px 48px;border-radius:4px;border-top:6px solid var(--g)}
+#paper.on{display:block}
+.head{text-align:center;border-bottom:2px solid #1a1a1a;padding-bottom:16px;margin-bottom:20px}
+.head small{color:var(--g);letter-spacing:3px}
+.head h1{font-size:25px;margin:6px 0 2px}
+.head h2{font-size:15px;font-weight:normal;font-style:italic;color:#444}
+.meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font-size:13px;margin-top:12px;padding-top:10px;border-top:1px solid #ccc}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;background:#fff;border:1px solid #ddd;padding:14px 18px;margin-bottom:20px}
+.info label{font-size:13px;font-weight:bold;display:block}
+.info input{width:100%;border:0;border-bottom:1px solid #888;background:transparent;font:inherit;padding:4px 0}
+.rules{background:#fff;border:1px solid #ddd;border-left:4px solid var(--g);padding:14px 20px;margin-bottom:24px;font-size:14px}
+.rules ol{padding-left:20px}
+.sec{color:var(--g);font-size:14px;margin:26px 0 12px;padding-bottom:6px;border-bottom:1px solid #ccc;display:flex;justify-content:space-between}
+.q{background:#fff;border:1px solid #ddd;border-radius:4px;padding:18px 22px;margin-bottom:16px}
+.qh{display:flex;justify-content:space-between;gap:12px;margin-bottom:8px}
+.qh h3{font-size:16px}
+.mk{font-size:12px;background:#1a1a1a;color:#d4b85a;border-radius:10px;padding:2px 10px;height:fit-content;white-space:nowrap}
+.q>p{font-size:14.5px;margin-bottom:10px}
+.opt{display:flex;gap:10px;align-items:flex-start;border:1px solid #ccc;border-radius:5px;padding:10px 12px;margin-bottom:8px;cursor:pointer}
+.opt:hover{border-color:var(--g)}
+.opt input{margin-top:4px;accent-color:var(--g)}
+.opt:focus-within{outline:2px solid var(--g);outline-offset:1px}
+.opt pre{font:13px/1.55 "Courier New",monospace;white-space:pre-wrap;margin:0}
+.opt b{font-family:"Courier New",monospace}
+.opt.sel{border-color:var(--g);background:#eef6ef}
+.opt.right{border-color:var(--g);background:#dff3e3}
+.opt.wrong{border-color:var(--bad);background:#fbe4e1}
+.why{font-size:13.5px;border-left:3px solid var(--g);background:#f4f8f4;padding:8px 12px;margin-top:6px;display:none}
+.why.bad{border-color:var(--bad);background:#fdf0ee}
+.bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:24px}
+button.act{font:inherit;padding:11px 24px;border-radius:6px;border:1px solid var(--g);background:var(--g);color:#fff;cursor:pointer}
+button.alt{background:transparent;color:var(--g)}
+#prog{font-size:13px;color:#555}
+#res{display:none;text-align:center;border:2px solid #1a1a1a;padding:16px;margin-top:22px;background:#fff}
+#res b{font-size:28px}
+@media print{body{background:#fff}#gate,.bar{display:none!important}#paper{display:block!important;margin:0;padding:10px;border:0}.q{page-break-inside:avoid}}
+@media(max-width:700px){#paper{padding:26px 16px;margin:12px 8px}.info{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="gate"><div class="gbox">
+<h2>Access Required</h2><p>Enter the access code to open the exam</p>
+<input id="code" type="text" autocomplete="off" spellcheck="false" placeholder="access code">
+<button id="go" type="button">Unlock exam</button><div id="err"></div>
+</div></div>
+
+<div id="paper">
+<div class="head"><small>CRE8LEARN INSTITUTE</small>
+<h1>Programming Logic and Design</h1><h2>Looping Structures and Arrays: Multiple Choice</h2>
+<div class="meta"><span><b>Duration:</b> 1 Hour</span><span><b>Questions:</b> 10</span><span><b>Total Marks:</b> 100</span></div></div>
+<div class="info">
+<div><label for="nm">Name</label><input id="nm"></div><div><label for="sn">Student No</label><input id="sn"></div>
+<div><label for="dt">Date</label><input id="dt" type="date"></div><div><label for="sg">Signature (type full name)</label><input id="sg"></div>
+</div>
+<div class="rules"><b>Instructions</b><ol>
+<li>Answer ALL questions. Choose ONE option per question.</li>
+<li>Each question is worth 10 marks. There is no negative marking.</li>
+<li>All code is pseudocode. Arrays start at index 0 unless stated.</li>
+<li>Click Submit when finished. You cannot change answers after submitting.</li></ol></div>
+<div id="qs"></div>
+<div class="bar"><span id="prog">0 of 10 answered</span>
+<button class="act" id="sub" type="button">Submit answers</button>
+<button class="act alt" id="prt" type="button">Print or save as PDF</button>
+<button class="act alt" id="lck" type="button">Lock exam</button></div>
+<div id="res"></div>
+</div>
+
+<script>
+(function(){
+"use strict";
+var CODE="crl88pr";
+var Q=[
+{s:"Section A: Looping Structures",t:"Sum of 1 to 20 (WHILE)",d:"Which pseudocode correctly displays the sum of all numbers from 1 to 20 (expected output: 210)?",
+o:["total = 0\ncounter = 1\nWHILE counter <= 20\n  total = total + counter\n  counter = counter + 1\nEND WHILE\nDISPLAY total",
+"total = 0\ncounter = 1\nWHILE counter < 20\n  total = total + counter\n  counter = counter + 1\nEND WHILE\nDISPLAY total",
+"total = 0\ncounter = 1\nWHILE counter <= 20\n  total = total + counter\nEND WHILE\nDISPLAY total",
+"counter = 1\nWHILE counter <= 20\n  total = 0\n  total = total + counter\n  counter = counter + 1\nEND WHILE\nDISPLAY total"],
+a:0,e:"Option A starts at 1, includes 20, and increments the counter. B stops at 19 (sum 190). C never increments, so it is an infinite loop. D resets total to 0 on every pass."},
+{t:"Multiplication table (FOR)",d:"Which pseudocode reads a number and displays its table from 1 to 10 (e.g. 3 x 1 = 3)?",
+o:["READ n\nFOR i FROM 0 TO 10\n  DISPLAY n, \" x \", i, \" = \", n * i\nEND FOR",
+"READ n\nFOR i FROM 1 TO 10\n  DISPLAY n, \" x \", i, \" = \", n * n\nEND FOR",
+"READ n\nFOR i FROM 1 TO 10\n  DISPLAY n, \" x \", i, \" = \", n * i\nEND FOR",
+"FOR i FROM 1 TO 10\n  READ n\n  DISPLAY n, \" x \", i, \" = \", n * i\nEND FOR"],
+a:2,e:"C reads once, loops 1 to 10, and multiplies by the counter. A starts at 0, B multiplies n by itself, and D asks for a new number on every pass."},
+{t:"Password retry (REPEAT UNTIL)",d:"Which loop keeps asking until the password admin123 is entered, then welcomes the user?",
+o:["REPEAT\n  READ pw\n  IF pw <> \"admin123\" THEN DISPLAY \"Incorrect, try again\"\nUNTIL pw = \"admin123\"\nDISPLAY \"Welcome\"",
+"REPEAT\n  READ pw\nUNTIL pw <> \"admin123\"\nDISPLAY \"Welcome\"",
+"READ pw\nREPEAT\n  DISPLAY \"Incorrect, try again\"\nUNTIL pw = \"admin123\"\nDISPLAY \"Welcome\"",
+"REPEAT\n  READ pw\nUNTIL pw = \"admin\"\nDISPLAY \"Welcome\""],
+a:0,e:"A reads inside the loop and stops only when the password matches. B stops on a wrong password, C never reads again inside the loop, and D checks the wrong value."},
+{t:"Countdown (FOR with step)",d:"Which pseudocode displays 10 down to 1, then Blast off once?",
+o:["FOR i FROM 10 TO 1 STEP 1\n  DISPLAY i\nEND FOR\nDISPLAY \"Blast off\"",
+"FOR i FROM 10 TO 1 STEP -1\n  DISPLAY i\n  DISPLAY \"Blast off\"\nEND FOR",
+"FOR i FROM 10 TO 0 STEP -1\n  DISPLAY i\nEND FOR\nDISPLAY \"Blast off\"",
+"FOR i FROM 10 TO 1 STEP -1\n  DISPLAY i\nEND FOR\nDISPLAY \"Blast off\""],
+a:3,e:"D counts down with STEP -1, ends at 1, and displays Blast off after the loop. A has the wrong step, B repeats Blast off every pass, and C also displays 0."},
+{t:"Average with a sentinel",d:"Numbers are read until -1 is entered. Which pseudocode correctly displays the average and also handles the case where no numbers were entered?",
+o:["total = 0\ncount = 0\nREAD n\nWHILE n <> -1\n  total = total + n\n  count = count + 1\n  READ n\nEND WHILE\nIF count > 0 THEN\n  DISPLAY total / count\nELSE\n  DISPLAY \"No numbers entered\"\nEND IF",
+"total = 0\ncount = 0\nREAD n\nWHILE n <> -1\n  total = total + n\n  count = count + 1\n  READ n\nEND WHILE\nDISPLAY total / count",
+"total = 0\ncount = 0\nREPEAT\n  READ n\n  total = total + n\n  count = count + 1\nUNTIL n = -1\nDISPLAY total / count",
+"total = 0\ncount = 0\nREAD n\nWHILE n <> -1\n  total = total + n\n  READ n\nEND WHILE\nDISPLAY total / count"],
+a:0,e:"A guards against division by zero. B crashes if nothing is entered. C adds the -1 into the total. D never increases count."},
+{s:"Section B: Arrays",t:"Display an array of names",d:"An array holds 5 names (indexes 0 to 4). Which pseudocode displays all of them without going out of bounds?",
+o:["DECLARE names[5]\nFOR i FROM 0 TO 5\n  DISPLAY names[i]\nEND FOR",
+"DECLARE names[5]\nFOR i FROM 1 TO 4\n  DISPLAY names[i]\nEND FOR",
+"DECLARE names[5]\nFOR i FROM 0 TO 4\n  DISPLAY names[i]\nEND FOR",
+"DECLARE names[5]\nDISPLAY names[5]"],
+a:2,e:"With 0-based indexing the last valid index is 4. A reads index 5 (out of bounds), B skips index 0, and D displays only a position that does not exist."},
+{t:"Sum and average of an array",d:"An array nums holds 8 integers. Which pseudocode gives the correct sum and average?",
+o:["total = 0\nFOR i FROM 0 TO 7\n  total = total + nums[i]\n  average = total / 8\nEND FOR\nDISPLAY total, average",
+"total = 0\nFOR i FROM 0 TO 7\n  total = total + nums[i]\nEND FOR\naverage = total / 7\nDISPLAY total, average",
+"FOR i FROM 0 TO 7\n  total = total + nums[i]\nEND FOR\naverage = total / 8\nDISPLAY total, average",
+"total = 0\nFOR i FROM 0 TO 7\n  total = total + nums[i]\nEND FOR\naverage = total / 8\nDISPLAY total, average"],
+a:3,e:"D initialises total, adds every element, then divides by 8 after the loop. A calculates the average inside the loop, B divides by 7, and C never initialises total."},
+{t:"Largest value and its position",d:"Which pseudocode finds the largest value in a 10-element array and the index where it is found?",
+o:["largest = nums[0]\npos = 0\nFOR i FROM 1 TO 9\n  IF nums[i] > largest THEN\n    largest = nums[i]\n    pos = i\n  END IF\nEND FOR",
+"largest = nums[0]\npos = 0\nFOR i FROM 1 TO 9\n  IF nums[i] < largest THEN\n    largest = nums[i]\n    pos = i\n  END IF\nEND FOR",
+"largest = nums[0]\npos = 0\nFOR i FROM 1 TO 9\n  IF nums[i] > largest THEN\n    largest = nums[i]\n  END IF\nEND FOR",
+"largest = 0\npos = 0\nFOR i FROM 0 TO 9\n  IF nums[i] < largest THEN\n    pos = i\n  END IF\nEND FOR"],
+a:0,e:"A starts from the first element, uses > to compare, and updates both the value and the position. B finds the smallest, C never updates pos, and D uses the wrong comparison."},
+{t:"Linear search with a flag",d:"Which pseudocode searches a 12-element array for target and reports the result correctly?",
+o:["FOR i FROM 0 TO 11\n  IF nums[i] = target THEN\n    DISPLAY \"Found at \", i\n  ELSE\n    DISPLAY \"Not found\"\n  END IF\nEND FOR",
+"found = FALSE\nFOR i FROM 0 TO 11\n  IF nums[i] = target THEN\n    found = TRUE\n    pos = i\n  END IF\nEND FOR\nIF found THEN\n  DISPLAY \"Found at \", pos\nELSE\n  DISPLAY \"Value not found\"\nEND IF",
+"found = TRUE\nFOR i FROM 0 TO 11\n  IF nums[i] = target THEN\n    pos = i\n  END IF\nEND FOR\nIF found THEN\n  DISPLAY \"Found at \", pos\nEND IF",
+"FOR i FROM 0 TO 12\n  IF nums[i] = target THEN\n    DISPLAY \"Found at \", i\n  END IF\nEND FOR"],
+a:1,e:"B uses a flag that starts FALSE and reports once, after the loop. A prints Not found for every non-matching element, C starts the flag as TRUE, and D reads index 12 (out of bounds)."},
+{t:"Count even and odd numbers",d:"Which pseudocode correctly counts the even and odd values in a 15-element array?",
+o:["even = 0\nodd = 0\nFOR i FROM 0 TO 14\n  IF nums[i] DIV 2 = 0 THEN\n    even = even + 1\n  ELSE\n    odd = odd + 1\n  END IF\nEND FOR",
+"even = 0\nodd = 0\nFOR i FROM 0 TO 14\n  IF nums[i] MOD 2 = 0 THEN\n    odd = odd + 1\n  ELSE\n    even = even + 1\n  END IF\nEND FOR",
+"even = 0\nodd = 0\nFOR i FROM 0 TO 14\n  IF nums[i] MOD 2 = 0 THEN\n    even = even + 1\n  ELSE\n    odd = odd + 1\n  END IF\nEND FOR\nDISPLAY even, odd",
+"FOR i FROM 0 TO 14\n  IF nums[i] MOD 2 = 0 THEN\n    even = even + 1\n  ELSE\n    odd = odd + 1\n  END IF\nEND FOR\nDISPLAY even, odd"],
+a:2,e:"C initialises both counters, uses MOD 2 to test evenness, and displays after the loop. A uses DIV, B swaps the counters, and D never initialises them."}
+];
+var L="ABCD",done=false,qs=document.getElementById("qs");
+Q.forEach(function(q,i){
+ if(q.s){var s=document.createElement("div");s.className="sec";var n=Q.filter(function(x,j){return j>=i&&(j===i||!x.s)}).length;
+  s.innerHTML="<span></span><span>"+(i===0?"5 questions, 50 marks":"5 questions, 50 marks")+"</span>";s.firstChild.textContent=q.s;qs.appendChild(s);}
+ var d=document.createElement("div");d.className="q";
+ d.innerHTML='<div class="qh"><h3></h3><span class="mk">10 marks</span></div><p></p><div class="os"></div><div class="why"></div>';
+ d.querySelector("h3").textContent="Question "+(i+1)+": "+q.t;d.querySelector("p").textContent=q.d;
+ q.o.forEach(function(t,k){var l=document.createElement("label");l.className="opt";
+  l.innerHTML='<input type="radio" name="q'+i+'" value="'+k+'"><b>'+L[k]+'.</b><pre></pre>';
+  l.querySelector("pre").textContent=t;d.querySelector(".os").appendChild(l);});
+ qs.appendChild(d);
+});
+function chosen(i){var r=document.querySelector('input[name="q'+i+'"]:checked');return r?+r.value:-1}
+function prog(){var c=0;Q.forEach(function(_,i){if(chosen(i)>-1)c++});document.getElementById("prog").textContent=c+" of 10 answered"}
+qs.addEventListener("change",function(e){
+ if(done)return;var g=e.target.closest(".os");if(!g)return;
+ g.querySelectorAll(".opt").forEach(function(o){o.classList.toggle("sel",o.querySelector("input").checked)});prog();});
+document.getElementById("sub").onclick=function(){
+ if(done)return;var un=[];Q.forEach(function(_,i){if(chosen(i)<0)un.push(i+1)});
+ if(un.length&&!confirm("Unanswered: "+un.join(", ")+". Submit anyway?"))return;
+ done=true;var score=0;
+ Q.forEach(function(q,i){var c=chosen(i),box=qs.querySelectorAll(".q")[i],opts=box.querySelectorAll(".opt"),w=box.querySelector(".why");
+  opts.forEach(function(o){o.querySelector("input").disabled=true});
+  opts[q.a].classList.add("right");
+  if(c===q.a){score+=10;w.textContent="Correct. "+q.e}
+  else{if(c>-1)opts[c].classList.add("wrong");w.classList.add("bad");w.textContent=(c<0?"Not answered. ":"Incorrect. ")+"Correct answer: "+L[q.a]+". "+q.e}
+  w.style.display="block";});
+ var r=document.getElementById("res");r.style.display="block";
+ r.innerHTML="";var b=document.createElement("b");b.textContent=score+" / 100";r.appendChild(b);
+ var p=document.createElement("div");p.textContent=(score>=50?"Pass":"Below pass mark")+" ("+Q.filter(function(q,i){return chosen(i)===q.a}).length+" of 10 correct)";r.appendChild(p);
+ this.disabled=true;r.scrollIntoView({behavior:"smooth"});};
+document.getElementById("prt").onclick=function(){window.print()};
+var gate=document.getElementById("gate"),paper=document.getElementById("paper"),ci=document.getElementById("code"),er=document.getElementById("err");
+function unlock(){if(ci.value.trim()===CODE){gate.classList.add("hidden");paper.classList.add("on");er.textContent="";ci.value="";window.scrollTo(0,0)}
+ else{er.textContent="Invalid access code. Please try again.";ci.value="";ci.focus()}}
+document.getElementById("go").onclick=unlock;
+ci.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();unlock()}});
+document.getElementById("lck").onclick=function(){if(!done&&!confirm("Lock the exam? Unsubmitted answers stay on screen."))return;paper.classList.remove("on");gate.classList.remove("hidden");ci.focus()};
+document.addEventListener("contextmenu",function(e){if(paper.classList.contains("on"))e.preventDefault()});
+document.addEventListener("copy",function(e){if(paper.classList.contains("on"))e.preventDefault()});
+ci.focus();
+})();
+</script>
+</body>
+</html>
